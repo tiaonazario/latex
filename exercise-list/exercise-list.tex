@@ -1,0 +1,37 @@
+\documentclass[
+oneside,			% para impressão em recto e verso. Oposto a oneside
+% -- opções da classe abntex2 --
+%chapter=TITLE,		% títulos de capítulos convertidos em letras maiúsculas
+%section=TITLE,		% títulos de seções convertidos em letras maiúsculas
+%subsection=TITLE,	% títulos de subseções convertidos em letras maiúsculas
+%subsubsection=TITLE,% títulos de subsubseções convertidos em letras maiúsculas
+]{settings/utfpr-tcc}
+%=======================================
+% Setar configurações
+%---------------------------------------
+\input{settings/packages.tex}
+\input{settings/pdf.tex}
+%_______________________________________
+
+%=======================================
+% Setar capa
+%---------------------------------------
+\input{structure/pretextual/cover}
+%_______________________________________
+
+
+\begin{document}
+	% seta os elementos pré-textuais
+	\pretextual
+	\imprimircapa
+	\include{structure/pretextual/summary}
+	
+	% seta os elementos textuais
+	\textual
+	\include{structure/textual/exercicios/exercicios}
+	
+	% seta os elementos pós-textuais
+	%\postextual
+	%\include{structure/postextual/referencias}
+	
+\end{document}

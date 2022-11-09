@@ -1,0 +1,69 @@
+% !TeX root = exercise-list.sty
+\ProvidesPackage{abntex2novopacote}[Criacao do modelo template para o um simples artigo]
+
+% -----------------------------------------------------------------------------
+% Capa
+% -----------------------------------------------------------------------------
+\makeatletter
+\renewcommand{\imprimircapa}{
+	\begin{capa}
+		\begin{center}
+			\begin{figure}
+				\centering
+				\imprimirlogoinstituicao
+			\end{figure}
+		
+			\begin{SingleSpacing}
+				\large\MakeUppercase{\imprimirinstituicao} \\
+				\abntex@ifnotempty{\imprimirdepartamento}
+				{
+					\MakeUppercase{\imprimirdepartamento} \\
+				}
+				\large\MakeUppercase{\imprimirprograma} \\
+				\large\MakeUppercase{\imprimirorientador}
+			\end{SingleSpacing}
+		\end{center}
+		\vspace{60pt}
+		\begin{center}
+			\large\MakeUppercase{\imprimirautor}\\
+		\end{center}
+		\vspace{60pt}
+		\begin{center}
+			\ABNTEXchapterfont\large\MakeUppercase{\imprimirtitulo}
+			\abntex@ifnotempty{\imprimirsubtitulo}
+			{%
+				{\ABNTEXchapterfont: }{\large{\imprimirsubtitulo}}
+			}
+		\end{center}
+		\vspace{60pt}
+		\begin{center}
+			\large\MakeUppercase{\imprimirprojeto}
+		\end{center}
+		\vfill
+		\begin{center}
+			\begin{SingleSpacing}
+				\large\MakeUppercase{\imprimirlocal}\\
+				\large\MakeUppercase{\imprimirdata}
+			\end{SingleSpacing}
+		\end{center}
+		
+	\end{capa}
+	
+}
+\makeatother
+
+\definecolor{blue}{RGB}{41,5,195}
+
+%\newcommand{\resposta}[1]{\vspace{-1em} \textcolor{blue}{#1}}
+
+%\newcommand{\questao}[1]{
+%\chapter{\uppercase{#1}}
+%\vspace{-36pt}
+%\noindent
+%}
+
+\newenvironment{questao}{\chapter{QUESTÃO:}\vspace{-36pt}\noindent\hspace{-4pt}}{}
+
+\renewcommand{\thesection}{}
+\newenvironment{solucao}{\color{blue}\section{\hspace{-12pt}SOLUÇÃO:}\noindent\hspace{-4pt}}{}
+

@@ -1,0 +1,25 @@
+\begin{questao}
+	Três lâmpadas idênticas foram ligadas no circuito esquematizado. A bateria apresenta resistência interna desprezível, e os fios possuem resistência nula. Um técnico fez uma análise do circuito para prever a corrente elétrica nos pontos: A, B, C, D e E; e rotulou essas correntes de IA, IB, IC, ID e IE, respectivamente.
+\end{questao}
+
+\begin{figure}[H]
+	\centering
+	\begin{circuitikz}[american voltages, thick]
+		\draw
+		(0,0)to[battery1, a=$V$](3,0)
+		(0,0)to[short](0,2)
+		(0,2)to[R, l=$L_{1}$](3,2)
+		(3,0)to[short](3,2)
+		(0,2)to[short](0,4)
+		(0,4)to[R, l=$L_{1}$](3,4)
+		(3,4)to[short](3,2)
+		(0,4)to[short](0,6)
+		(0,6)to[R, l=$L_{1}$](3,6)
+		(3,6)to[short](3,4)
+		;
+	\end{circuitikz}
+\end{figure}
+
+\begin{solucao}
+	Essa solução é simples
+\end{solucao}
