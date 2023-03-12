@@ -1,27 +1,60 @@
 \ProvidesPackage{settings/styles}
 
 % Definir as variáveis
+\providecommand{\imprimirlogoinstituicao}{}
+\newcommand{\logoinstituicao}[2]{\renewcommand{\imprimirlogoinstituicao}{\includegraphics[width={#1}\textwidth]{#2}}}
+
 \providecommand{\imprimirdepartamento}{}
 \newcommand{\departamento}[1]{\renewcommand{\imprimirdepartamento}{#1}}
 
 \providecommand{\imprimirprojeto}{}
 \newcommand{\projeto}[1]{\renewcommand{\imprimirprojeto}{#1}}
 
+\providecommand{\imprimirdisciplina}{}
+\newcommand{\disciplina}[1]{\renewcommand{\imprimirdisciplina}{#1}}
+
+\providecommand{\imprimircidade}{}
+\newcommand{\cidade}[1]{\renewcommand{\imprimircidade}{#1}}
+
+\providecommand{\imprimirano}{}
+\newcommand{\ano}[1]{\renewcommand{\imprimirano}{#1}}
+
+
 % -----------------------------------------------------------------------------
 % Capa
 % -----------------------------------------------------------------------------
 \renewcommand{\imprimircapa}{
-\begin{center}
-	\MakeUppercase{\textbf{\imprimirinstituicao}} \\
-	\MakeUppercase{\textbf{\imprimirdepartamento}}
-\end{center}
 
-\begin{center}
-	\MakeUppercase{\textbf{\imprimirprojeto}} \\
-	\textbf{\imprimirtitulo}
-\end{center}
+\begin{capa}
+	
+	\begin{center}
+		\begin{figure}
+			\centering
+			\imprimirlogoinstituicao
+		\end{figure}
 
-\noindent \textbf{Aluno:} \imprimirautor
+		\MakeUppercase{\imprimirinstituicao} \\
+		\MakeUppercase{\imprimirdepartamento} \\
+		\MakeUppercase{\imprimirdisciplina} \\
+		\MakeUppercase{\imprimirprojeto}
+
+		\vspace{5cm}
+
+		\MakeUppercase{\textbf{\imprimirtitulo}}
+		
+		\vspace{4cm}
+		
+		\MakeUppercase{\imprimirautor}
+
+		\vfill
+
+		\MakeUppercase{\imprimircidade}
+
+		\MakeUppercase{\imprimirano}
+
+	\end{center}
+		
+\end{capa}
 }
 
 % Define a numeração das equações de forma sequencial
