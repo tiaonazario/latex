@@ -1,0 +1,68 @@
+\ProvidesPackage{settings/styles}
+
+% Definir as variáveis
+\providecommand{\imprimirdepartamento}{}
+\newcommand{\departamento}[1]{\renewcommand{\imprimirdepartamento}{#1}}
+
+\providecommand{\imprimirprojeto}{}
+\newcommand{\projeto}[1]{\renewcommand{\imprimirprojeto}{#1}}
+
+% -----------------------------------------------------------------------------
+% Capa
+% -----------------------------------------------------------------------------
+\renewcommand{\imprimircapa}{
+\begin{center}
+	\MakeUppercase{\textbf{\imprimirinstituicao}} \\
+	\MakeUppercase{\textbf{\imprimirdepartamento}}
+\end{center}
+
+\begin{center}
+	\MakeUppercase{\textbf{\imprimirprojeto}} \\
+	\textbf{\imprimirtitulo}
+\end{center}
+
+\noindent \textbf{Aluno:} \imprimirautor
+}
+
+% Define a numeração das equações de forma sequencial
+\counterwithout{equation}{chapter}
+
+% Personalizando a fonte
+\renewcommand{\fonte}[1]
+{
+	\\
+	\centering\small{Fonte: #1}
+}
+
+% Retira o espaçamento entre a legenda e a figura
+\setlength{\abovecaptionskip}{0pt}
+
+% -----------------------------------------------------------------------------
+% Redefinindo o tamanho das fontes dos titulos.
+% -----------------------------------------------------------------------------
+% \titleformat{comando}{formato}{rótulo}{separação}{antes}[depois]
+% \titlespacing{<comando>}{<esquerda>}{<acima>}{<abaixo>}
+
+\titleformat{\chapter}{\normalfont\bfseries\MakeUppercase}{}{0em}{}
+\titleformat{\section}{\normalfont\bfseries\MakeUppercase}{}{0em}{}
+
+\titlespacing{\chapter}{0pt}{12pt}{6pt}
+\titlespacing{\section}{0pt}{12pt}{6pt}
+
+% -----------------------------------------------------------------------------
+% Configurações gerais
+% -----------------------------------------------------------------------------
+% Tamanho da indentação do parágrafo
+\setlength{\parindent}{1.25cm}
+
+% Espaçamento entre um parágrafo e outro
+\setlength{\parskip}{0.0cm}
+
+% Define as listas de item compactas (sem espaçamento entre os itens)
+\setlist{noitemsep, topsep=0pt, parsep=0pt, partopsep=0pt}
+
+% Retira o espaço extra desnecessário nas frases
+\frenchspacing
+
+\sloppy
+\epstopdfsetup{outdir=./illustrations/figures/to-pdf/}
