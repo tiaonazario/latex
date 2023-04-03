@@ -76,11 +76,16 @@
 % \titleformat{comando}{formato}{rótulo}{separação}{antes}[depois]
 % \titlespacing{<comando>}{<esquerda>}{<acima>}{<abaixo>}
 
+\titleformat{\part}{\filcenter\normalfont\bfseries\MakeUppercase}{}{0em}{}
 \titleformat{\chapter}{\normalfont\bfseries\MakeUppercase}{}{0em}{}
-\titleformat{\section}{\normalfont\bfseries\MakeUppercase}{}{0em}{}
+\titleformat{\section}{\normalfont\bfseries}{}{0em}{}
+\titleformat{\subsection}{\normalfont\bfseries}{}{0em}{}
+\titleformat{\subsubsection}{\normalfont\bfseries}{}{0em}{}
 
 \titlespacing{\chapter}{0pt}{12pt}{6pt}
 \titlespacing{\section}{0pt}{12pt}{6pt}
+\titlespacing{\subsection}{0pt}{12pt}{6pt}
+\titlespacing{\subsubsection}{0pt}{12pt}{6pt}
 
 % -----------------------------------------------------------------------------
 % Configurações gerais
@@ -99,3 +104,66 @@
 
 \sloppy
 \epstopdfsetup{outdir=./illustrations/figures/to-pdf/}
+
+\newcommand{\questao}[2]{\section[#1]{#2}}
+
+% configurar linguagens
+\definecolor{lightgray}{HTML}{f8f9fa}
+%\definecolor{keywordstyle}{HTML}{03523F}
+\definecolor{commentstyle}{HTML}{03523F}
+\lstset{
+	language=VHDL,
+	backgroundcolor=\color{lightgray},
+	basicstyle=\footnotesize,
+	keywordstyle=\footnotesize\color{blue},
+	commentstyle=\footnotesize\color{commentstyle}
+}
+\renewcommand{\lstlistingname}{Código}
+
+% Redefine Apêndice para Anexo
+\renewcommand{\appendixname}{Anexo}
+\renewcommand{\appendixpagename}{Anexos}
+\renewcommand{\appendixtocname}{Anexos}
+
+\lstdefinelanguage{Assembly}{ % Define a linguagem Assembly
+  morekeywords={mov, add, sub, jmp, je}, % Adiciona as palavras-chave
+  sensitive=false, % Define se as palavras-chave são sensíveis a maiúsculas e minúsculas
+  morecomment=[l]{;}, % Define o caractere de comentário
+  morestring=[b]", % Define o caractere de string
+}
+
+\lstset{ % Define as opções de formatação
+  language=Assembly, % Usa a linguagem Assembly definida anteriormente
+  basicstyle=\ttfamily\small, % Define a fonte e o tamanho básico
+  keywordstyle=\bfseries, % Define o estilo para as palavras-chave
+  commentstyle=\itshape, % Define o estilo para os comentários
+  stringstyle=\ttfamily, % Define o estilo para as strings
+  showstringspaces=false, % Não mostra os espaços nas strings
+  breaklines=true, % Quebra as linhas longas
+  numbers=left, % Posiciona os números de linha à esquerda
+  numberstyle=\tiny, % Define o tamanho dos números de linha
+  stepnumber=1, % Define o intervalo dos números de linha
+  % frame=single, % Adiciona uma moldura ao redor do código
+}
+
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{myorange}{rgb}{1.0,0.4,0}
+
+\lstdefinestyle{Python}{
+    language=Python,
+    basicstyle=\ttfamily\small,
+    keywordstyle=\color{blue},
+    stringstyle=\color{mygreen},
+    commentstyle=\color{mygray},
+    morecomment=[l][\color{myorange}]{\#},
+    % frame=tb,
+    numbers=left,
+    numberstyle=\tiny\color{mygray},
+    breaklines=true,
+    showstringspaces=false,
+    tabsize=2
+}
+
+\lstset{style=Python}
+
